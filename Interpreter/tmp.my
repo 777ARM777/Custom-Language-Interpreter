@@ -1,0 +1,42 @@
+decl integer x = 7
+decl double y = 5.5
+decl boolean w = true
+
+check y > 2 + 3.2 {
+    decl string x = 'asdf'
+    x = 'edc'
+    y = 8
+    display 'enclosing1'
+    check x == 'edc'  {
+        decl double y = 87.2
+        y = 9.5
+
+        decl integer i = -10
+        decl integer k = 0
+
+        step ( i = 0 : i < 10 : i += 3 ) {
+            display i
+
+        }
+
+
+        till ( k < 10 + 5 ) {
+            display k
+            k = k + 2
+
+        }
+        display 'local'
+    }
+    other {
+        display 'other'
+    }
+
+
+    display 'enclosing2'
+}
+other {
+    display 'other2'
+}
+
+
+display 'global'
